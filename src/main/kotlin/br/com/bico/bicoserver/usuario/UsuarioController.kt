@@ -6,16 +6,23 @@ import org.springframework.web.bind.annotation.RestController
 
 @RequestMapping("/usuario")
 @RestController
-class UsuarioController {
+class UsuarioController(var usuarioRepository:UsuarioRepository) {
 
     @GetMapping("/teste")
     fun test(): Usuario {
         val usuario = Usuario()
-        usuario.id = 1
+
         usuario.nome = "PAULO HENRIQUE VESCOVI"
         usuario.usuario = "paulo.vescovi@viasoft.com.br"
         usuario.senha = "72hj3gh23672vm3b1jh3h1567x517562"
+
+        usuarioRepository.save(usuario)
         return usuario;
+    }
+
+    @GetMapping("/all")
+    fun login(): MutableIterable<Usuario> {
+        return usuarioRepository.findAll();
     }
 
 }
