@@ -1,6 +1,5 @@
-package br.com.bico.bicoserver.configuration
+package br.com.bico.bicoserver.configuration.jwt
 
-import org.springframework.security.core.Authentication
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.web.filter.GenericFilterBean
 

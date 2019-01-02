@@ -1,4 +1,4 @@
-package br.com.bico.bicoserver.configuration
+package br.com.bico.bicoserver.configuration.jwt
 
 import br.com.bico.bicoserver.usuario.UserDetailsServiceImpl
 import org.springframework.context.annotation.Configuration

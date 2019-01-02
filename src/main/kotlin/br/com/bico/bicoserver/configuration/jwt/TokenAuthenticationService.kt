@@ -1,4 +1,4 @@
-package br.com.bico.bicoserver.configuration
+package br.com.bico.bicoserver.configuration.jwt
 
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
