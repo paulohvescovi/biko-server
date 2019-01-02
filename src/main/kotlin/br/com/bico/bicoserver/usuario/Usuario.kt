@@ -1,6 +1,7 @@
 package br.com.bico.bicoserver.usuario
 
 import javax.persistence.*
+import javax.validation.constraints.Size
 
 @Entity
 data class Usuario (
@@ -16,7 +17,11 @@ data class Usuario (
     var usuario: String? = null,
 
     @Column
-    var senha: String? = null
+    @Size(min = 5, max = 60)
+    var senha: String? = null,
+
+    @Column
+    var email: String? = null
 
 
 )

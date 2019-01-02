@@ -13,8 +13,8 @@ import java.util.Date
 object TokenAuthenticationService {
 
     private val EXPIRATIONTIME: Long = 864000000
-    private val SECRET = "MySecreteApp"
-    private val TOKEN_PREFIX = "Bearer"
+    private val SECRET = "S&nh@Bik0Secreta"
+    private val TOKEN_PREFIX = "Biko"
     private val HEADER_STRING = "Authorization"
 
     fun addAuthentication(res: HttpServletResponse, username: String) {
@@ -36,6 +36,9 @@ object TokenAuthenticationService {
     }
 
     fun getByToken(token: String): Authentication? {
+        if (!token.contains(TOKEN_PREFIX)){
+            return null
+        }
         val user = Jwts.parser()
                 .setSigningKey(SECRET)
                 .parseClaimsJws(token.replace(TOKEN_PREFIX, ""))
