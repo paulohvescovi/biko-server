@@ -24,5 +24,4 @@ class UsuarioController(var usuarioRepository:UsuarioRepository) {
     fun login(): MutableIterable<Usuario> {
         return usuarioRepository.findAll();
     }
-
 }

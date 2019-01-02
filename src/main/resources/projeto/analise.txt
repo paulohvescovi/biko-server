@@ -1,0 +1,80 @@
+Aplicativo para Lojista/Prestador de Serviço X cliente
+
+Funcionalidades
+
+Cliente -> {
+    Perfil, dados pessoais
+    Buscar produtos
+    Buscar serviços
+    Buscar empresas/pessoas
+    Cadastrar interesses (tipo um leilão)
+}
+
+Fornecedor/Prestador -> {
+    Perfil, dados da empresa/prestador
+    cadastrar produtos
+    cadastrar serviços
+    ver leiloes/necessidades de pessoas
+}
+
+
+Usuario cliente dados
+
+id
+username
+senha
+email
+nome
+sobrenome
+enderecos [
+    rua/av
+    numero
+    bairro
+    cidade
+    estado
+    cep
+]
+telefones [
+    celular1
+    celular2
+    whatsapp
+    etc
+]
+latitude
+longitude
+cpf
+data de nascimento
+
+
+Usuario prestador de serviço
+id
+username
+senha
+email
+pessoa fisica / juridica
+nome
+sobrenome
+razao social
+fantasia
+enderecos [
+    rua/av
+    numero
+    bairro
+    cidade
+    estado
+    cep
+]
+telefones [
+    celular1
+    celular2
+    whatsapp
+    etc
+]
+latitude
+longitude
+cpf/cnpj
+datanascimento/abertura empresa
+
+
+
+
