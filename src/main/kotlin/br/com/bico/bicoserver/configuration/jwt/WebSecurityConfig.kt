@@ -1,6 +1,6 @@
 package br.com.bico.bicoserver.configuration.jwt
 
-import br.com.bico.bicoserver.usuario.UserDetailsServiceImpl
+import br.com.bico.bicoserver.usuario.UsuarioService
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.HttpMethod
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
@@ -13,7 +13,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-class WebSecurityConfig(var userDetailsService: UserDetailsServiceImpl) : WebSecurityConfigurerAdapter() {
+class WebSecurityConfig(var usuarioService: UsuarioService) : WebSecurityConfigurerAdapter() {
 
     @Throws(Exception::class)
     override fun configure(httpSecurity: HttpSecurity) {
@@ -21,7 +21,6 @@ class WebSecurityConfig(var userDetailsService: UserDetailsServiceImpl) : WebSec
                 .antMatchers("/home").permitAll()
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
                 .anyRequest().authenticated()
-
                 .and()
 
                 // filtra requisições de login
@@ -40,6 +39,6 @@ class WebSecurityConfig(var userDetailsService: UserDetailsServiceImpl) : WebSec
     }
 
     override fun userDetailsService(): UserDetailsService {
-        return userDetailsService
+        return usuarioService
     }
 }

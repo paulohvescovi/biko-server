@@ -1,27 +1,24 @@
 package br.com.bico.bicoserver.usuario
 
 import javax.persistence.*
-import javax.validation.constraints.Size
 
-@Entity
+@Entity(name = "USUARIO")
 data class Usuario (
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     var id: Long? = null,
 
-    @Column
-    var nome: String? = null,
+    @Column(name = "EMAIL")
+    var email: String? = null,
 
-    @Column
-    var usuario: String? = null,
-
-    @Column
-    @Size(min = 5, max = 60)
+    @Column(name = "SENHA")
     var senha: String? = null,
 
-    @Column
-    var email: String? = null
+    @Column(name = "NOME")
+    var nome: String? = null,
 
-
+    @Column(name = "SOBRENOME")
+    var sobrenome: String? = null
 )
