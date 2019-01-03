@@ -8,9 +8,8 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class UsuarioController(var usuarioService: UsuarioService) {
 
-    @GetMapping("/teste")
+    @GetMapping("/usuario")
     fun test(): Usuario {
-        println(usuarioService.getUsuarioLogado())
         return usuarioService.getUsuarioLogado()
     }
 
