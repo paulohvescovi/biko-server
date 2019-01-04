@@ -23,12 +23,12 @@ class JWTLoginFilter(url: String, authManager: AuthenticationManager) : Abstract
     @Throws(AuthenticationException::class, IOException::class, ServletException::class)
     override fun attemptAuthentication(
             req: HttpServletRequest, res: HttpServletResponse): Authentication {
-        val (username, password) = ObjectMapper().readValue(req.inputStream, UserCredentials::class.java)
+        val (email, senha) = ObjectMapper().readValue(req.inputStream, UserCredentials::class.java)
 
         return authenticationManager.authenticate(
                 UsernamePasswordAuthenticationToken(
-                        username,
-                        password,
+                        email,
+                        senha,
                         emptyList()
                 )
         )
