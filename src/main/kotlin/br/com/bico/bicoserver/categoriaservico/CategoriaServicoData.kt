@@ -1,4 +1,4 @@
-package br.com.bico.bicoserver.categorias
+package br.com.bico.bicoserver.categoriaservico
 
 import org.springframework.data.jpa.repository.JpaRepository
 
