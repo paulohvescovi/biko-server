@@ -15,7 +15,14 @@ class CategoriaServico(
         var descricao: String? = null,
 
         @OneToMany(mappedBy = "categoria", fetch = FetchType.EAGER, cascade = arrayOf(CascadeType.ALL), orphanRemoval = false)
-        var subCategoriaList: MutableList<SubCategoriaServico>
+        var subCategoriaList: MutableList<SubCategoriaServico>,
+
+        @Column(name = "DESCRICAODETALHADA")
+        var descricaoDetalhada: String? = null,
+
+        @Column(name = "IMAGEURL")
+        var imageUrl: String? = null
+
 
 
 )
